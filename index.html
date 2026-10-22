@@ -49,7 +49,7 @@ button:active,.wa:active{transform:scale(.97)}button.secondary{background:#fffff
       <button class="key" data-digit="7">7</button><button class="key" data-digit="8">8</button><button class="key" data-digit="9">9</button>
       <button class="key" data-digit="0" style="grid-column:2">0</button><button class="key" id="backspace" aria-label="Hapus">⌫</button>
     </div>
-    <div class="error" id="pinError">Clue: tanggal atau angka spesial kita 💗</div>
+    <div class="error" id="pinError">Clue: tanggal dan bulan angka spesial kita 💗</div>
   </section>
 
   <section class="panel hidden" id="letterPanel">
@@ -62,7 +62,7 @@ button:active,.wa:active{transform:scale(.97)}button.secondary{background:#fffff
 
   <section class="panel hidden" id="finalPanel">
     <div class="avatar"><img src="foto-kalian.jpg" alt="Jacklin dan Dede"></div>
-    <h1 style="text-align:center">I Love You, Dede ❤️</h1>
+    <h1 style="text-align:center">I Love You so much, Dede ❤️</h1>
     <div class="copy" style="text-align:center;min-height:auto">Dari Jacklin, untuk Dede 🫶</div>
     <div class="gallery"><img src="foto-kalian.jpg" alt="Foto kenangan 1"><img src="foto-kenangan.jpg" alt="Foto kenangan 2"></div>
     <div class="actions"><a class="wa" id="replyButton" href="#" target="_blank" rel="noopener">💌 Balas Jacklin</a></div>
@@ -79,10 +79,11 @@ function enterDigit(d){if(pin.length>=4)return;pin+=d;drawDots();if(pin.length==
 document.querySelectorAll("[data-digit]").forEach(b=>b.addEventListener("click",()=>enterDigit(b.dataset.digit)));
 document.getElementById("backspace").addEventListener("click",()=>{pin=pin.slice(0,-1);drawDots();pinError.textContent="Masukkan 4 angka yang tepat!"});
 const steps=[
- ["Kamu tahu nggak? 🥺","Ada satu orang yang bisa bikin hariku terasa lebih baik..."],
- ["Cie... nungguin nih?! 😝","Aku senang banget bisa kenal kamu, Dede. Makasih sudah hadir di hidupku. 💗"],
- ["Ada satu hal lagi... 🙈","Semoga kita selalu bisa saling bikin senyum, saling dukung, dan bikin banyak kenangan indah. 🫶"]
-];
+ ["Selamat Sore Dede🥹 ","Ada satu orang yang bisa bikin hari wa terasa lebih baik..."],
+ ["Saat Pertama Kali Ketemu Dede 🥲","wa senang banget bisa kenal kenal sama Dede. Makasih sudah perna hadir di hidup wa. 💗"],
+ ["Ada satu hal lagi... 😔","wa minta maaf sebesar besarnya atas 1,5tahun selalu buat leh kesal dan mulai ini wa sadar diri dan wa akan mengubah kesalahan wa yang perna perbuat sama leh dede."]
+ ["Kalo dede kasih wa kesempatan wa akan ubah jauh lebih baik dari sebelum nya, kalo misal nya juga gak bisa buat kali ini wa gak paksa liau dan wa juga ikhlas kepergian dede😔"]
+ ["wa turutin kemauan Dede buat gak maksa dede liau dan wa makasih banyak sudah berikan wa perhatian dan kasih sayang"]
 let step=0;const title=document.getElementById("letterTitle"),copy=document.getElementById("letterCopy"),next=document.getElementById("nextBtn");
 function typeText(text){copy.textContent="";let i=0;const timer=setInterval(()=>{copy.textContent+=text.charAt(i++);if(i>=text.length)clearInterval(timer)},38)}
 function showStep(){title.textContent=steps[step][0];typeText(steps[step][1]);next.textContent=step===steps.length-1?"Buka pesan terakhir 💌":"Lanjut 💗"}
@@ -91,9 +92,8 @@ const whatsappNumber="6282276179195";
 const prefilledMessage="Aku punya sesuatu yang spesial buat kamu ❤️ Buka yaa!";
 document.getElementById("replyButton").href="https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(prefilledMessage);
 </script>
-
-  <audio controls loop style="width:100%; margin:15px 0;">
-  <source src="./Tegar%20Septian%20-%20Mengharapkanmu%20lirik.mp3" type="audio/mpeg">
-</audio>
-  
-</body></html>
+<audio controls loop style="width:100%; margin:15px 0;">
+<source src="./Tegar%20Septian%20-%20Mengharapkanmu%20lirik.mp3" type="audio/mpeg">
+</audio>  
+</body>
+</html>
